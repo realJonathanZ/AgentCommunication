@@ -1,1 +1,28 @@
-recording the model in use, which might be different for each branch
+*@Bruh@*recording the model in use, which might be different for each branch*@Bruh@*
+
+
+https://huggingface.co/deepseek-ai/DeepSeek-V3.1
+Model: DeepSeek-V3.1
+Inference providers: Fireworks
+
+code snippet provided on webpage as follows in Python:
+
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://router.huggingface.co/v1",
+    api_key=os.environ["HF_TOKEN"],
+)
+
+completion = client.chat.completions.create(
+    model="deepseek-ai/DeepSeek-V3.1:fireworks-ai",
+    messages=[
+        {
+            "role": "user",
+            "content": "What is the capital of France?"
+        }
+    ],
+)
+
+print(completion.choices[0].message)
