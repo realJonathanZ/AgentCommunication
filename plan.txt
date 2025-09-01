@@ -6,6 +6,7 @@ Inference provider: (explanation) https://huggingface.co/docs/inference-provider
 Model specification: https://huggingface.co/deepseek-ai/DeepSeek-V3.1
 Model: DeepSeek-V3.1
 Inference providers: Fireworks
+context length(involving a limit of input+output): 128K
 
 
 **Access Token** << Bro has got it on desktop file 'Tokens.txt'>>
