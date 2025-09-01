@@ -1,3 +1,6 @@
+# Testing behavior if I use the batch functionality provided by api client
+
+
 import os
 import time
 from huggingface_hub import InferenceClient
@@ -49,13 +52,15 @@ for i, choice in enumerate(completion.choices):
 # There is only one element in it
 # Therefore I got 1 + 1 print response
 
+# ***But notice there might be more than 1 choice if I increase the number of messages I feed it
+
 # It takes 6.37 seconds in total
 # The terminal output I'm gonna include it as following:
 
 ################################
 ################################
 
-# C:\bruh\bruhh\bruhhh\AgentCommunication> python test_example_002.python
+# C:\bruh\bruhh\bruhhh\AgentCommunication> python test_example_002.py
 # Execution time: 6.370581388473511 seconds
 # the type of choice 0 (i starts at 0) : <class 'huggingface_hub.inference._generated.types.chat_completion.ChatCompletionOutputComplete'>
 # Response to request 1: Let's calculate each sum step by step:
