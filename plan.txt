@@ -13,19 +13,16 @@ Inference providers: Fireworks
 code snippet provided on webpage as follows in Python:
 
 import os
-from openai import OpenAI
+from huggingface_hub import InferenceClient
 
-client = OpenAI(
-    base_url="https://router.huggingface.co/v1",
-    api_key=os.environ["HF_TOKEN"],
-)
+client = InferenceClient()
 
 completion = client.chat.completions.create(
-    model="deepseek-ai/DeepSeek-V3.1:fireworks-ai",
+    model="deepseek-ai/DeepSeek-V3-0324",
     messages=[
         {
             "role": "user",
-            "content": "What is the capital of France?"
+            "content": "How many 'G's in 'huggingface'?"
         }
     ],
 )
