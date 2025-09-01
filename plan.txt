@@ -5,6 +5,9 @@ https://huggingface.co/deepseek-ai/DeepSeek-V3.1
 Model: DeepSeek-V3.1
 Inference providers: Fireworks
 
+
+**Access Token** << Bro has got it on desktop file 'Tokens.txt'>>
+
 code snippet provided on webpage as follows in Python:
 
 import os
