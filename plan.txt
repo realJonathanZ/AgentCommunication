@@ -1,7 +1,9 @@
 *@Bruh@*recording the model in use, which might be different for each branch*@Bruh@*
 
+Inference provider: (explanation) https://huggingface.co/docs/inference-providers/index
 
-https://huggingface.co/deepseek-ai/DeepSeek-V3.1
+
+Model specification: https://huggingface.co/deepseek-ai/DeepSeek-V3.1
 Model: DeepSeek-V3.1
 Inference providers: Fireworks
 
