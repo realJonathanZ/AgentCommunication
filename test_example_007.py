@@ -28,7 +28,9 @@ data_sections = [
 
 # define the constraint and category key
 constraint = "the model must accept all information in a single data section and return True/False \
-            based on whether the category-key matches the data section. \
+            based on whether the following statement is true:\n \
+            The location of the place indicated by the data section exists in the real world, AND \
+            is considered a type of {---}, where {---} should be replaced by category key provided. \
             Only one word should be returned, either 'True' or 'False'."
 category_key = "gym"
 
@@ -57,5 +59,4 @@ for section in data_sections:
     ##############################
     ##############################
 
-    # nah some wrong results..
-    # about asking it one by one to see where is wrong? prompt? constraint? unable to search through web?
+    # All good response
