@@ -5,7 +5,7 @@ Model: DeepSeek-V3.1
 Inference providers: Fireworks
 Context length: 128K
 
-This project implements a console-based chatbot using the model specified above.
+This project implements a console-based chatbot using the model specified above (via api).
 
 ## How to Run
 
