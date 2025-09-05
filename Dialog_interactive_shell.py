@@ -1,8 +1,9 @@
 import os
+import time
 from huggingface_hub import InferenceClient
 
 # Initialize the InferenceClient
-client = InferenceClient()
+client = InferenceClient(api_key=os.getenv("HF_ACCESS_TOKEN"))
 
 def dialog_interactive_shell():
     """
