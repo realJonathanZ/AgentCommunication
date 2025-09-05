@@ -52,5 +52,7 @@ def dialog_interactive_shell():
         # append agent response to the conversation history
         messages.append({"role": "assistant", "content": response})
 
+
 if __name__ == "__main__":
     dialog_interactive_shell()
+
