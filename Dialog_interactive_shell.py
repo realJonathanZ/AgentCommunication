@@ -18,9 +18,12 @@ def dialog_interactive_shell():
 
     print("system role has been set successfully. Soon requesting user to enter user-input...")
 
+    # the core array that keeps conversation history simultaneously
+    messages = [{"role": "system", "content": system_role}]
+
     # third option: interactive loop
     while True:
-        print("You: (press Enter twice when done)(Say something to AI model..)\n")
+        print("You: (press Enter twice when done)(Say something to AI model..)")
         user_input = ""
         while True:
             line = input().strip()
@@ -33,20 +36,21 @@ def dialog_interactive_shell():
             print("bye..")
             break
 
-        # Assuming constraint is part of user_input? user feed it in along with user_input
+        # append user input to the conversation history
+        messages.append({"role": "user", "content": user_input})
 
         # api call here you go
         completion = client.chat.completions.create(
             model="deepseek-ai/DeepSeek-V3-0324",
-            messages=[
-                {"role": "system", "content": system_role},
-                {"role": "user", "content": user_input}
-            ]
+            messages=messages
         )
 
         # fetch response content and display..
         response = completion.choices[0].message.content
         print(f"deepseekV3.1 response:\n {response}")
+
+        # append agent response to the conversation history
+        messages.append({"role": "assistant", "content": response})
 
 if __name__ == "__main__":
     dialog_interactive_shell()
