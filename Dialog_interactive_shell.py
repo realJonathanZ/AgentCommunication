@@ -26,11 +26,15 @@ def dialog_interactive_shell():
 
     # save history?? -> nah
     doSaveHistory = False
+    conversation_history_filename = "historyOutput.txt"  # by default
 
     # save history?? -> user choice! -> nah/yeah
     save_choice = input("Do you want to save the conversation history? (y/n): ").strip().lower()
     if save_choice == "y":
         doSaveHistory = True
+        conversation_history_filename = input("Enter the filename to save the conversation history (default: historyOutput.txt)(just enter if using default): ").strip()
+        if not conversation_history_filename:
+            conversation_history_filename = "historyOutput.txt"
 
     # third option: interactive loop
     while True:
@@ -63,20 +67,20 @@ def dialog_interactive_shell():
         # append agent response to the conversation history
         messages.append({"role": "assistant", "content": response})
 
-        # Optionally save the history after each interaction
+        # save history depending on flag..
         if doSaveHistory:
-            printHistoryInTxt(messages)
+            printHistoryInTxt(messages, history_filename)
 
-def printHistoryInTxt(messages):
+def printHistoryInTxt(messages, history_filename):
     """
-    Save the conversation history to a text file named historyOutput.txt.
+    Save the conversation history to a text file. (That either user-predefined-or-not name)
     """
-    with open("historyOutput.txt", "w") as file:
+    with open(history_filename, "w") as file:
         for message in messages:
             role = message["role"].capitalize()
             content = message["content"].strip()
             file.write(f"{role}: {content}\n\n")
-    print("Conversation history has been saved to historyOutput.txt.")
+    print(f"Conversation history has been saved to {history_filename}.")
 
 
 if __name__ == "__main__":
