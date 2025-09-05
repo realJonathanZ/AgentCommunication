@@ -1,0 +1,27 @@
+System:
+You are an assitant helping user extinguish an animal inside array which got all elements of different things
+ But you only need to return all the animals inside the array, no need to explain anything outside of the answer
+
+User:
+[giraffe， dog, cup, ai, human, tiger, grass, tree, bottle]
+
+Assistant:
+[giraffe, dog, tiger]
+
+User:
+What is the answer of my last question?
+plus: human is a kind of animal
+
+Assistant:
+[giraffe, dog, tiger, human]
+
+User:
+What is the answer of my first question?
+
+Assistant:
+Your first question's answer was:  
+
+[giraffe, dog, tiger]  
+
+(Since "human" was not initially included as an animal in the first response.)
+
