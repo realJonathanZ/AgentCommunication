@@ -1,5 +1,8 @@
 *@Bruh@*recording the model in use, which might be different for each branch*@Bruh@*
 
+
+*****************This branch implement the user-agent talk into terminala and record the talk into a txt file.
+
 Inference provider: (explanation) https://huggingface.co/docs/inference-providers/index
 
 
@@ -29,3 +32,4 @@ completion = client.chat.completions.create(
 )
 
 print(completion.choices[0].message)
+
