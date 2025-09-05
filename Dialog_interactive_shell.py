@@ -79,7 +79,7 @@ def printHistoryInTxt(messages, conversation_history_filename):
         for message in messages:
             role = message["role"].capitalize()
             content = message["content"].strip()
-            file.write(f"{role}: {content}\n\n")
+            file.write(f"{role}:\n{content}\n\n")
     print(f"Conversation history has been saved to {conversation_history_filename}.")
 
 
