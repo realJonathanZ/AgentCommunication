@@ -69,18 +69,18 @@ def dialog_interactive_shell():
 
         # save history depending on flag..
         if doSaveHistory:
-            printHistoryInTxt(messages, history_filename)
+            printHistoryInTxt(messages, conversation_history_filename)
 
-def printHistoryInTxt(messages, history_filename):
+def printHistoryInTxt(messages, conversation_history_filename):
     """
     Save the conversation history to a text file. (That either user-predefined-or-not name)
     """
-    with open(history_filename, "w") as file:
+    with open(conversation_history_filename, "w", encoding="utf-8") as file:
         for message in messages:
             role = message["role"].capitalize()
             content = message["content"].strip()
             file.write(f"{role}: {content}\n\n")
-    print(f"Conversation history has been saved to {history_filename}.")
+    print(f"Conversation history has been saved to {conversation_history_filename}.")
 
 
 if __name__ == "__main__":
