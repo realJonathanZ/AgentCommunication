@@ -3,33 +3,19 @@
 
 *****************This branch implement the user-agent talk into terminala and record the talk into a txt file.
 
-Inference provider: (explanation) https://huggingface.co/docs/inference-providers/index
+All the info regarding of the model/api usage is literally same to the DSV3.1 branch
 
+Ideas of the interactive program: using simple while loop, enter q to terminate.
 
-Model specification: https://huggingface.co/deepseek-ai/DeepSeek-V3.1
-Model: DeepSeek-V3.1
-Inference providers: Fireworks
-context length(involving a limit of input+output): 128K
+First option: Do u wanna generate dialog history? (y/n)
 
+Second option: Please setting system role: ... (excepting user input of a string)
+    The input may contain \n! Somehow need to make something like shift+enter thing.
+    e.g. system role: "You are an assistant that follows user-defined constraints strictly."
 
-**Access Token** << Bro has got it on desktop file 'Tokens.txt'>>
+Third option: feed the prompt to terminal, then display result fetched from api response..
+    * Now, the user-defined constraint should stay inside the prompt
 
-code snippet provided on webpage as follows in Python:
-
-import os
-from huggingface_hub import InferenceClient
-
-client = InferenceClient()
-
-completion = client.chat.completions.create(
-    model="deepseek-ai/DeepSeek-V3-0324",
-    messages=[
-        {
-            "role": "user",
-            "content": "How many 'G's in 'huggingface'?"
-        }
-    ],
-)
-
-print(completion.choices[0].message)
+And I suppose it runing in a loop, in the same session...
+When third option's user input provided as a "q" or "Q" or "quit", end as if 'ctrl-c'
 
