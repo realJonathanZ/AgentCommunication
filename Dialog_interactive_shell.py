@@ -5,6 +5,9 @@ from huggingface_hub import InferenceClient
 client = InferenceClient()
 
 def dialog_interactive_shell():
+    """
+    Setting role -> Setting flag for saving history or not -> Interactive conversation loop
+    """
     print("this script's execution has started: " + __file__)
 
     # second option: setting system role (what fake / simulated personality you want it to be?)
@@ -20,6 +23,14 @@ def dialog_interactive_shell():
 
     # the core array that keeps conversation history simultaneously
     messages = [{"role": "system", "content": system_role}]
+
+    # save history?? -> nah
+    doSaveHistory = False
+
+    # save history?? -> user choice! -> nah/yeah
+    save_choice = input("Do you want to save the conversation history? (y/n): ").strip().lower()
+    if save_choice == "y":
+        doSaveHistory = True
 
     # third option: interactive loop
     while True:
@@ -51,6 +62,21 @@ def dialog_interactive_shell():
 
         # append agent response to the conversation history
         messages.append({"role": "assistant", "content": response})
+
+        # Optionally save the history after each interaction
+        if doSaveHistory:
+            printHistoryInTxt(messages)
+
+def printHistoryInTxt(messages):
+    """
+    Save the conversation history to a text file named historyOutput.txt.
+    """
+    with open("historyOutput.txt", "w") as file:
+        for message in messages:
+            role = message["role"].capitalize()
+            content = message["content"].strip()
+            file.write(f"{role}: {content}\n\n")
+    print("Conversation history has been saved to historyOutput.txt.")
 
 
 if __name__ == "__main__":
