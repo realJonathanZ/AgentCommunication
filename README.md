@@ -31,8 +31,9 @@ This project implements a console-based chatbot using the model specified above 
 ### Example Workflow
 Below is an example of how the chatbot interaction works(in console):
 ```powershell
+
 ......\AgentCommunication> python Dialog_interactive_shell.py                        
-this script's execution has started: C:\CMPTProjects\agentCommunication\AgentCommunication\Dialog_interactive_shell.py
+this script's execution has started: ...\Dialog_interactive_shell.py
 please set the system role (press enter when done):
 You are an assistant helpp answering questions from user
 
