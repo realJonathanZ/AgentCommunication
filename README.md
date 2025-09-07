@@ -14,19 +14,27 @@ This project implements a console-based chatbot using the model specified above 
 
 2. **Get an Access Token**
    - After registering, generate an access token from your Hugging Face account settings.
+   - Read-only token is enough for use, for this project
 
 3. **Set the Access Token as an Environment Variable**
    - Use the following command to set the environment variable (if on Windows OS):
-     ```powershell
-     $env:HF_ACCESS_TOKEN="abcdefg"
-     ```
-     Replace `abcdefg` with your actual access token.
+   ```powershell
+   $env:HF_ACCESS_TOKEN="abcdefg"
+   ```
+   Replace `abcdefg` with your actual access token.
+
+   - alternatively, consider updating environment variable in the system setting such that no need to set up the environment var conpeatedly.
 
 4. **Run the Script**
-   - Open a terminal and execute the following command:
-     ```powershell
-     python Dialog_interactive_shell.py
-     ```
+   - ensure python is installed as latest version
+   - Open a terminal and execute the commands:
+   ```powershell
+   pip install -r requirements.txt
+   ```
+   - execute:
+   ```powershell
+   python Dialog_interactive_shell.py
+   ```
 
 ### Example Workflow
 Below is an example of how the chatbot interaction works(in console):
