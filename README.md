@@ -30,7 +30,7 @@ This project implements a console-based chatbot using the model specified above 
 
 ### Example Workflow
 Below is an example of how the chatbot interaction works(in console):
-```powershell
+```text
 
 ......\AgentCommunication> python Dialog_interactive_shell.py                        
 this script's execution has started: ...\Dialog_interactive_shell.py
